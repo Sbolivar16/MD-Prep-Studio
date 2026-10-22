@@ -4,6 +4,7 @@ title: "MD-Prep Studio: protein–ligand molecular dynamics setup for GROMACS fr
 type: software
 version: 1.1.0
 date-released: 2026-10-22
+doi: 10.5281/zenodo.23577063
 license: MIT
 repository-code: "https://github.com/Sbolivar16/MD-Prep-Studio"
 authors:
