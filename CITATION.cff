@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use MD-Prep Studio, please cite it as below, together with the tools and methods listed in references.bib."
+title: "MD-Prep Studio: protein–ligand molecular dynamics setup for GROMACS from docking poses"
+type: software
+version: 1.1.0
+date-released: 2026-10-22
+license: MIT
+repository-code: "https://github.com/Sbolivar16/MD-Prep-Studio"
+# doi: 10.5281/zenodo.XXXXXXX     # add the DOI that Zenodo assigns to your first release
+authors:
+  - alias: "Sbolivar16"
+    # add your full name, affiliation and ORCID, e.g.:
+    # family-names: "Bolívar"
+    # given-names: "Santiago"
+    # affiliation: "Universidad ..."
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - molecular dynamics
+  - GROMACS
+  - protein-ligand complex
+  - docking
+  - GAFF2
+  - AMBER
+  - system preparation

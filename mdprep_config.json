@@ -1,0 +1,14 @@
+{
+  "lang": "en",
+  "workdir": "",
+  "slurm": {
+    "partition": "gpu",
+    "ntasks": 8,
+    "gpus": 1,
+    "time": "48:00:00",
+    "nodes": 1,
+    "modules": "# Load GROMACS as your cluster requires, for example:\nmodule load GROMACS",
+    "gpu_full": false,
+    "maxh": true
+  }
+}

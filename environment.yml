@@ -1,0 +1,23 @@
+name: md-prep
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - gromacs
+  - ambertools
+  - acpype
+  - pdbfixer
+  - openmm
+  - rdkit
+  - openbabel
+  - pdb2pqr
+  - propka
+  - numpy
+  - scipy
+  - pandas
+  - biopython
+  - py3dmol
+  - pip
+  - pip:
+      - streamlit>=1.50
