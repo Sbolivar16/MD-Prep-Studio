@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use MD-Prep Studio, please cite it as below, together with the tools and methods listed in references.bib."
 title: "MD-Prep Studio: protein–ligand molecular dynamics setup for GROMACS from docking poses"
 type: software
-version: 1.1.0
+version: 1.1.1
 date-released: 2026-10-22
 doi: 10.5281/zenodo.23577063
 license: MIT

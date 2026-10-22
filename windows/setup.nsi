@@ -83,7 +83,11 @@ Section "MD-Prep Studio" SecMain
   WriteRegDWORD HKCU "${UNINSTKEY}" "NoRepair" 1
 
   DetailPrint "$(StepText)"
-  nsExec::ExecToLog 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$INSTDIR\install_windows.ps1" -Lang ${LCODE} -InstDir "$INSTDIR"'
+  StrCpy $1 "powershell.exe"
+  ${If} ${FileExists} "$WINDIR\Sysnative\WindowsPowerShell\v1.0\powershell.exe"
+    StrCpy $1 "$WINDIR\Sysnative\WindowsPowerShell\v1.0\powershell.exe"
+  ${EndIf}
+  nsExec::ExecToLog '"$1" -NoProfile -ExecutionPolicy Bypass -File "$INSTDIR\install_windows.ps1" -Lang ${LCODE} -InstDir "$INSTDIR"'
   Pop $0
   ${If} $0 == "3010"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\RunOnce" "MD-Prep-Setup" '"$EXEPATH"'
@@ -102,9 +106,13 @@ SectionEnd
 
 Section "Uninstall"
   DetailPrint "$(RemoveText)"
-  nsExec::ExecToLog 'wsl.exe --terminate MD-Prep'
+  StrCpy $1 "wsl.exe"
+  ${If} ${FileExists} "$WINDIR\Sysnative\wsl.exe"
+    StrCpy $1 "$WINDIR\Sysnative\wsl.exe"
+  ${EndIf}
+  nsExec::ExecToLog '"$1" --terminate MD-Prep'
   Pop $0
-  nsExec::ExecToLog 'wsl.exe --unregister MD-Prep'
+  nsExec::ExecToLog '"$1" --unregister MD-Prep'
   Pop $0
   Delete "$DESKTOP\MD-Prep Studio.lnk"
   RMDir /r "$SMPROGRAMS\MD-Prep Studio"

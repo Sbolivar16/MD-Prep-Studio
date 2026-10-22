@@ -24,7 +24,7 @@ from pathlib import Path
 import numpy as np
 
 APP_NAME = "MD-Prep Studio"
-APP_VERSION = "1.1.0"
+APP_VERSION = "1.1.1"
 APP_URL = "https://github.com/Sbolivar16/MD-Prep-Studio"
 
 AGUAS = {"HOH", "WAT", "H2O", "DOD", "SOL", "TIP", "TIP3"}

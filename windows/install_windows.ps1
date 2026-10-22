@@ -10,6 +10,13 @@ param(
     [string]$InstDir = (Join-Path $env:LOCALAPPDATA "MD-Prep"),
     [int]$Port = 8642
 )
+# The setup .exe is 32-bit, so Windows starts the 32-bit PowerShell, which cannot see wsl.exe (64-bit only).
+# Relaunch this script with the 64-bit PowerShell.
+if ([Environment]::Is64BitOperatingSystem -and -not [Environment]::Is64BitProcess) {
+    $ps64 = Join-Path $env:windir "Sysnative\WindowsPowerShell\v1.0\powershell.exe"
+    & $ps64 -NoProfile -ExecutionPolicy Bypass -File $PSCommandPath -Lang $Lang -InstDir $InstDir -Port $Port
+    exit $LASTEXITCODE
+}
 $ErrorActionPreference = "Continue"   # native tools write progress to stderr; errors are checked explicitly
 $ProgressPreference = "SilentlyContinue"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -39,7 +46,7 @@ function Enable-Wsl {
     Log (M "Activando WSL (Subsistema de Windows para Linux). Windows pedirá permiso de administrador..." `
            "Enabling WSL (Windows Subsystem for Linux). Windows will ask for administrator permission...")
     try {
-        $p = Start-Process -FilePath "wsl.exe" -ArgumentList "--install", "--no-distribution" -Verb RunAs -Wait -PassThru -ErrorAction Stop
+        $p = Start-Process -FilePath (Join-Path $env:windir "System32\wsl.exe") -ArgumentList "--install", "--no-distribution" -Verb RunAs -Wait -PassThru -ErrorAction Stop
         Log ("wsl --install --no-distribution -> " + $p.ExitCode)
     } catch {
         Log ((M "No se pudo activar WSL automáticamente: " "WSL could not be enabled automatically: ") + $_)
