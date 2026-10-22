@@ -1,11 +1,15 @@
 # MD-Prep Studio
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23577063.svg)](https://doi.org/10.5281/zenodo.23577063)
+
 **From a protein–ligand docking pose to a ready-to-run GROMACS molecular dynamics simulation, in a few clicks.**
 
 MD-Prep Studio is a local web application (it runs on your computer and opens in the browser) that takes the complex
 produced by molecular docking and builds a solvated, neutralized system for GROMACS. It also writes the SLURM script to run the simulation
 on an HPC cluster. Every step uses established open-source tools and the force fields and settings most commonly used in the
 literature. Each package also includes a **methods paragraph and the references** you need to cite in a paper.
+
+Developed at the Natural Products Research Group, Universidad Distrital Francisco José de Caldas (Bogotá, Colombia).
 
 ![MD-Prep Studio](docs/screenshot_prepare.png)
 
