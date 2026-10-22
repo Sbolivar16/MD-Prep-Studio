@@ -6,14 +6,11 @@ version: 1.1.0
 date-released: 2026-10-22
 license: MIT
 repository-code: "https://github.com/Sbolivar16/MD-Prep-Studio"
-# doi: 10.5281/zenodo.XXXXXXX     # add the DOI that Zenodo assigns to your first release
 authors:
-  - alias: "Sbolivar16"
-    # add your full name, affiliation and ORCID, e.g.:
-    # family-names: "Bolívar"
-    # given-names: "Santiago"
-    # affiliation: "Universidad ..."
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Bolívar Avila"
+    given-names: "Santiago"
+    affiliation: "Grupo de Investigación en Productos Naturales, Universidad Distrital Francisco José de Caldas, Bogotá, Colombia"
+    orcid: "https://orcid.org/0000-0002-3772-7604"
 keywords:
   - molecular dynamics
   - GROMACS
