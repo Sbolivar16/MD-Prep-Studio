@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+MD-Prep_systems/
+MD-Prep_sistemas/
+*.zip
+windows/build/
+*.exe
